@@ -9,8 +9,8 @@ DrinksRpcConf:
       Key: drinks.rpc
 
 GptConf:
-  APIKey: fk211622-Eq3KWICYUxzzsf9ACloJ34s1hFaZG5PO
-  BaseUrl: https://oa.api2d.net/v1
+  APIKey: xxx
+  BaseUrl: https://api.openai.com
 
 Log:
   ServiceName: gpt-api
