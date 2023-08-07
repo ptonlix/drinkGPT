@@ -1,0 +1,63 @@
+syntax = "v1"
+
+info(
+	title: "饮品实例"
+	desc: "饮品实例"
+	author: "Baird"
+	email: "baird0917@163.com"
+)
+
+type Goods {
+	Id          int64  `json:"id"`
+	CategoryId  int64  `json:"categoryId"`
+	Name        string `json:"name"`
+	Ingredients string `json:"ingredients"`
+	Tea         string `json:"tea"`
+	CupCapacity string `json:"cup_capacity"`
+}
+
+type (
+	GetGoodsListResp {
+		GoodsList []Goods `json:"list"`
+	}
+
+)
+
+type (
+	GetGoodsListByCategoryReq {
+		CategoryId  int64  `form:"categoryId"`
+	}	
+	GetGoodsListByCategoryResp {
+		GoodsList []Goods `json:"list"`
+	}	
+)
+
+type (
+	AddGoodsReq {
+		CategoryId  int64  `json:"categoryId"`
+		Name        string `json:"name"`
+		Ingredients string `json:"ingredients"`
+		Tea         string `json:"tea"`
+		CupCapacity string `json:"cup_capacity"`
+	}
+	AddGoodsResp {
+		Id int64 `json:"id"`
+	}
+)
+
+type (
+	UpdateGoodsReq {
+		Id          int64  `json:"id"`
+		CategoryId  int64  `json:"categoryId"`
+		Name        string `json:"name"`
+		Ingredients string `json:"ingredients"`
+		Tea         string `json:"tea"`
+		CupCapacity string `json:"cup_capacity"`
+	}
+)
+
+type (
+	DeleteGoodsReq {
+		Id int64 `json:"id"`
+	}
+)

@@ -1,0 +1,106 @@
+syntax = "proto3";
+
+package drinks;
+option go_package="./drinks";
+
+//model
+message  Category {
+  int64 id = 1;
+  string name = 2;
+  string desc =3;
+}
+
+message  Goods {
+  int64 id = 1;
+  int64 categoryId = 2;
+  string name =3;
+  string ingredients=4;
+  string tea=5;
+  string cupCapacity=6;
+}
+
+//Category req 、resp
+message listCategoryReq {
+}
+message listCategoryResp {
+  repeated Category categoryList = 1; 
+}
+
+message AddCategoryReq {
+  string name = 1;
+  string desc = 2;
+}
+message AddCategoryResp { 
+  int64 id = 1;
+}
+
+message UpdateCategoryReq {
+  int64 id = 1; 
+  string name = 2;
+  string desc = 3;
+}
+message UpdateCategoryResp { 
+}
+
+message DeleteCategoryReq {
+  int64 id = 1; 
+}
+message DeleteCategoryResp { 
+}
+
+//Goods req 、resp
+message listGoodsReq {
+}
+message listGoodsResp {
+  repeated Goods goodsList = 1; 
+}
+
+message listGoodsByCategoryReq {
+  int64 categoryId = 1;
+}
+message listGoodsByCategoryResp {
+  repeated Goods goodsList = 1; 
+}
+
+
+message AddGoodsReq {
+  int64 categoryId = 1;
+  string name = 2;
+  string ingredients = 3;
+  string cupCapacity = 4;
+  string tea = 5;
+}
+message AddGoodsResp { 
+  int64 id = 1;
+}
+
+message UpdateGoodsReq {
+  int64 id = 1; 
+  int64 categoryId = 2;
+  string name = 3;
+  string ingredients = 4;
+  string cupCapacity = 5;
+  string tea = 6;
+}
+message UpdateGoodsResp { 
+}
+
+message DeleteGoodsReq {
+  int64 id = 1; 
+}
+message DeleteGoodsResp { 
+}
+
+
+service Drinks {
+  rpc GetListCategory(listCategoryReq) returns(listCategoryResp);
+  rpc AddCategory(AddCategoryReq) returns(AddCategoryResp);
+  rpc UpdateCategory(UpdateCategoryReq) returns(UpdateCategoryResp);
+  rpc DeleteCategory(DeleteCategoryReq) returns(DeleteCategoryResp);
+
+  rpc GetListGoods(listGoodsReq) returns(listGoodsResp);
+  rpc GetListGoodsByCategory(listGoodsByCategoryReq) returns(listGoodsByCategoryResp);
+  rpc AddGoods(AddGoodsReq) returns(AddGoodsResp);
+  rpc UpdateGoods(UpdateGoodsReq) returns(UpdateGoodsResp);
+  rpc DeleteGoods(DeleteGoodsReq) returns(DeleteGoodsResp);  
+}

@@ -1,0 +1,44 @@
+syntax = "v1"
+
+info(
+	title: "类别实例"
+	desc: "类别实例"
+	author: "Baird"
+	email: "baird0917@163.com"
+)
+
+type Category {
+	Id   int64  `json:"id"`
+	Name string `json:"name"`
+	Desc string `json:"desc"`
+}
+
+type (
+	GetCategoryListResp {
+		CategoryList []Category `json:"categoryList"`
+	}
+)
+
+type (
+	AddCategoryReq {
+		Name string `json:"name"`
+		Desc string `json:"desc"`
+	}
+	AddCategoryResp {
+		Id int64 `json:"id"`
+	}
+)
+
+type (
+	UpdateCategoryReq {
+		Id   int64  `json:"id"`
+		Name string `json:"name"`
+		Desc string `json:"desc"`
+	}
+)
+
+type (
+	DeleteCategoryReq {
+		Id int64 `json:"id"`
+	}
+)

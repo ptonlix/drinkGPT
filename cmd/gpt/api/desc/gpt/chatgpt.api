@@ -1,0 +1,28 @@
+syntax = "v1"
+
+info(
+	title: "GPT实例"
+	desc: "GPT实例"
+	author: "Baird"
+	email: "baird0917@163.com"
+)
+
+type Goods {
+	Id          int64  `json:"id"`
+	CategoryId  int64  `json:"categoryId"`
+	Name        string `json:"name"`
+	Ingredients string `json:"ingredients"`
+	Tea         string `json:"tea"`
+	CupCapacity string `json:"cup_capacity"`
+	Reason      string `json:"reason"`
+}
+
+type (
+	DrinkGptReq {
+		CategoryId int64    `json:"categoryId"`
+		Phrases    []string `json:"prases"`
+	}
+	DrinkGptResp {
+		Drink Goods `json:"drink"`
+	}
+)

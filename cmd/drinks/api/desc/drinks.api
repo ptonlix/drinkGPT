@@ -1,0 +1,89 @@
+syntax = "v1"
+
+info(
+	title: "饮品数据服务"
+	desc: "饮品数据服务"
+	author: "GoGeekBaird"
+	email: "gogeek2022@163.com"
+	version: "v1"
+)
+
+import (
+	"tea/category.api"
+	"tea/goods.api"
+)
+
+//============================> drink v1 <============================
+//大饮品类型，喜茶、奈雪等
+@server(
+	prefix: /v1/drinks
+	group: category
+	//jwt: JwtAuth
+	//middleware: OnlineStatus // 路由中间件声明
+)
+service drinks {
+
+	@doc(
+		summary: "获取饮品种类列表"
+	)
+	@handler list
+	get /category/list returns (GetCategoryListResp)
+
+	@doc(
+		summary: "新增饮品种类"
+	)
+	@handler add
+	post /category/add(AddCategoryReq) returns (AddCategoryResp)
+
+	@doc(
+		summary: "删除饮品种类"
+	)
+	@handler delete
+	post /category/delete(DeleteCategoryReq)
+
+	@doc(
+		summary: "更新饮品种类"
+	)
+	@handler update
+	post /category/update(UpdateCategoryReq)
+}
+
+//饮品实例
+@server(
+	prefix: /v1/drinks
+	group: goods
+	//jwt: JwtAuth
+	//middleware: OnlineStatus // 路由中间件声明
+)
+service drinks {
+
+	@doc(
+		summary: "获取饮品实例列表"
+	)
+	@handler list
+	get /goods/list returns (GetGoodsListResp)
+
+	@doc(
+		summary: "根据饮品种类获取实例列表"
+	)
+	@handler listbycategory
+	get /goods/listbycategory(GetGoodsListByCategoryReq) returns (GetGoodsListByCategoryResp)
+
+	@doc(
+		summary: "新增饮品实例"
+	)
+	@handler add
+	post /goods/add(AddGoodsReq) returns (AddGoodsResp)
+
+	@doc(
+		summary: "删除饮品实例"
+	)
+	@handler delete
+	post /goods/delete(DeleteGoodsReq)
+
+	@doc(
+		summary: "更新饮品实例"
+	)
+	@handler update
+	post /goods/update(UpdateGoodsReq)
+}

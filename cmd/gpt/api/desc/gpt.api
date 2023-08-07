@@ -1,0 +1,27 @@
+syntax = "v1"
+
+info(
+	title: "GPT服务"
+	desc: "GPT服务"
+	author: "GoGeekBaird"
+	email: "gogeek2022@163.com"
+	version: "v1"
+)
+
+import (
+	"gpt/chatgpt.api"
+)
+
+@server(
+	prefix: /v1/gpt
+	group: category
+	//jwt: JwtAuth
+	//middleware: OnlineStatus // 路由中间件声明
+)
+service gpt {
+	@doc(
+		summary: "获取推荐饮品"
+	)
+	@handler chat
+	post /drinks/chat(DrinkGptReq) returns (DrinkGptResp)
+}

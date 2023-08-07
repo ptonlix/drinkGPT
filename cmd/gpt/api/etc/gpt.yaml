@@ -1,0 +1,17 @@
+Name: gpt
+Host: 127.0.0.1
+Port: 28888
+Timeout: 90000
+DrinksRpcConf:
+   Etcd:
+      Hosts:
+      - 127.0.0.1:2379
+      Key: drinks.rpc
+
+GptConf:
+  APIKey: fk211622-Eq3KWICYUxzzsf9ACloJ34s1hFaZG5PO
+  BaseUrl: https://oa.api2d.net/v1
+
+Log:
+  ServiceName: gpt-api
+  Level: error

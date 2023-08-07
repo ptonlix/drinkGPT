@@ -1,0 +1,13 @@
+Name: drinks
+Host: 0.0.0.0
+Port: 18888
+
+DrinksRpcConf:
+   Etcd:
+      Hosts:
+      - 127.0.0.1:2379
+      Key: drinks.rpc
+
+Log:
+  ServiceName: drinks-api
+  Level: error
