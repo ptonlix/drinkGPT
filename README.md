@@ -26,6 +26,7 @@ English | [简体中文](./README-zh.md)
 ## 架构
 
 ![](https://img.gejiba.com/images/e2577f4b4314dead58f6edaf50dbd2f8.png)
+
 目前项目关键有三个服务 drinkapi drinkrpc gptapi
 1. drinkapi 为新增饮品种类（如喜茶等）、新增饮品和编辑、删除等API请求操作
 2. drinkrpc 为drinkapi的CURD实现  
