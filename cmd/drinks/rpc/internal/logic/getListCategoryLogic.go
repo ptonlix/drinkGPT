@@ -39,6 +39,5 @@ func (l *GetListCategoryLogic) GetListCategory(in *drinks.ListCategoryReq) (*dri
 		_ = copier.Copy(categoryResp, category)
 		listResp = append(listResp, categoryResp)
 	}
-	l.Error(123, len(listResp))
 	return &drinks.ListCategoryResp{CategoryList: listResp}, nil
 }

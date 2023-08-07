@@ -28,9 +28,7 @@ func NewDeleteCategoryLogic(ctx context.Context, svcCtx *svc.ServiceContext) *De
 
 func (l *DeleteCategoryLogic) DeleteCategory(in *drinks.DeleteCategoryReq) (*drinks.DeleteCategoryResp, error) {
 	category, err := l.svcCtx.CategoryModel.FindOne(l.ctx, in.Id)
-	l.Error(err)
 	if err == model.ErrNotFound {
-		l.Error(123456)
 		return nil, errors.Wrapf(xerr.NewErrCode(xerr.DB_NOT_FOUND), "该类型不存在，Id:%d,err:%v", in.Id, err)
 	}
 	if err != nil {

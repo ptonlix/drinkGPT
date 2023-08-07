@@ -1,7 +1,7 @@
 # 生成api业务代码 ， 进入"服务/cmd/api/desc"目录下，执行下面命令
 # goctl api go -api *.api -dir ../  --style=goZero 
 # 指定自定义模版目录
-# goctl api go -api *.api -dir ../  --style=goZero --home ../../../../../deploy/goctl/1.4.0
+# goctl api go -api *.api -dir ../  --style=goZero --home ../../../../deploy/goctl/1.4.0
 
 # 生成rpc业务代码
 # 【注】 需要安装下面3个插件
@@ -15,7 +15,7 @@
 #
 # 1）goctl >= 1.3 进入"服务/cmd/rpc/pb"目录下，执行下面命令
 #    goctl rpc protoc *.proto --go_out=../ --go-grpc_out=../  --zrpc_out=../ --style=goZero
-#    goctl rpc protoc *.proto --go_out=../ --go-grpc_out=../  --zrpc_out=../ --style=goZero --home ../../../../../deploy/goctl/1.4.0
+#    goctl rpc protoc *.proto --go_out=../ --go-grpc_out=../  --zrpc_out=../ --style=goZero --home ../../../../deploy/goctl/1.4.0
 #    去除proto中的json的omitempty
 #    mac: sed -i "" 's/,omitempty//g' *.pb.go
 #    linux: sed -i 's/,omitempty//g' *.pb.go

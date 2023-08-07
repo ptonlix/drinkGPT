@@ -8,37 +8,37 @@ info(
 )
 
 type Category {
-	Id   int64  `json:"id"`
-	Name string `json:"name"`
-	Desc string `json:"desc"`
+	Id       int64  `json:"id"`
+	Name     string `json:"name"`
+	desc     string `json:"desc"`
 }
 
 type (
 	GetCategoryListResp {
-		CategoryList []Category `json:"categoryList"`
+		CategoryList []Category `json:"list"`
 	}
 )
 
 type (
 	AddCategoryReq {
-		Name string `json:"name"`
-		Desc string `json:"desc"`
+		Name     string `json:"name"`
+	    desc     string `json:"desc"`
 	}
-	AddCategoryResp {
-		Id int64 `json:"id"`
-	}
+   AddCategoryResp {
+        Id       int64  `json:"id"`
+	} 
 )
 
 type (
 	UpdateCategoryReq {
-		Id   int64  `json:"id"`
-		Name string `json:"name"`
-		Desc string `json:"desc"`
+        Id       int64  `json:"id"`
+		Name     string `json:"name"`
+	    desc     string `json:"desc"`
 	}
 )
 
 type (
 	DeleteCategoryReq {
-		Id int64 `json:"id"`
+		  Id       int64  `json:"id"`
 	}
 )
